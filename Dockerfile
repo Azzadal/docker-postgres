@@ -9,6 +9,5 @@
 FROM docker:22.06.0-beta.0-cli-alpine3.16
 RUN apk update
 RUN apk add nodejs npm docker-cli-compose openjdk11 python3 postgresql
-RUN locate psql
 
-CMD ["psql", "\l"]
+CMD /var/lib/postgresql/data/psql \l
